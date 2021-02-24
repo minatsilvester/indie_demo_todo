@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Todos from './components/todo'
+import store from './store'
+import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
+import { configure } from '@testing-library/react';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Provider store={store()}>
+    <Todos />
+  </Provider>  
+  ,
   document.getElementById('root')
 );
 
